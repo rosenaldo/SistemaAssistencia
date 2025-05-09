@@ -110,8 +110,7 @@ if($mao_obra == ""){
 
 $total_final = $total_produtos + $total_servicos + $mao_obra;
 if($total_final <= 0){
-	echo 'Você precisa adicionar itens a OS!';
-	exit();
+
 }
 
 if($desconto == ""){

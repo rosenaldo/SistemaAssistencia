@@ -92,7 +92,7 @@ if(@$os == 'ocultar'){
 						</div>
 
 
-						<div class="col-md-3">						
+						<!-- <div class="col-md-3">						
 							<div class=""> 
 								<label>Produtos / <small>R$ <span id="tot_produtos"></span></small></label> 
 								<select class="sel2" name="produto" id="produto"  style="width:80%;"> 
@@ -112,11 +112,11 @@ if(@$os == 'ocultar'){
 
 								<a class="btn btn-success" href="#" onclick="addProduto()" class="btn btn-primary"> <i class="fa fa-check"></i> </a>
 							</div>						
-						</div>
+						</div> -->
 
 						
 
-
+<!-- 
 						<div class="col-md-3">						
 							<div class=""> 
 								<label>Serviços / <small>R$ <span id="tot_servicos"></span></small></label> 
@@ -138,7 +138,7 @@ if(@$os == 'ocultar'){
 
 								<a class="btn btn-success" href="#" onclick="addServico()" class="btn btn-primary"> <i class="fa fa-check"></i> </a>
 							</div>						
-						</div>
+						</div> -->
 
 					
 					</div>
@@ -156,11 +156,18 @@ if(@$os == 'ocultar'){
 
 						
 
-						<div class="col-md-2">						
+						<!-- <div class="col-md-2">						
 							<div class="form-group"> 
 								<label>Valor</label> 
 								<input class="form-control" type="text" name="valor" id="valor" readonly>
 							</div>						
+						</div> -->
+
+						<div class="col-md-2">		
+							<div class="form-group"> 
+								<label>Valor</label> 
+								<input class="form-control" type="number" name="mao_obra" id="mao_obra"  placeholder="Caso Tenha Valor" onkeyup="totalizar()" onchange="totalizar()">
+							</div>	
 						</div>
 
 						<div class="col-md-2">						
@@ -242,12 +249,12 @@ if(@$os == 'ocultar'){
 							</div>	
 						</div>
 
-						<div class="col-md-2">		
+						<!-- <div class="col-md-2">		
 							<div class="form-group"> 
 								<label>Mão de Obra</label> 
 								<input class="form-control" type="number" name="mao_obra" id="mao_obra"  placeholder="Caso Tenha Valor" onkeyup="totalizar()" onchange="totalizar()">
 							</div>	
-						</div>
+						</div> -->
 					</div>
 
 					<div class="row" style="margin-top: 0px">

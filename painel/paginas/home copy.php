@@ -417,7 +417,6 @@ if($total > 0){
 				<i class="pull-left fa fa-dollar dollar2 icon-rounded"></i>
 				<div class="stats">
 					<h5><strong><span style="font-size: 19px; color:#000">R$ <?php echo $vendas_hoje_rsF ?></span></strong></h5>
-					<!-- <span><span style="font-size: 13px; color:#424242">(<?php echo $vendas_hoje ?>) Warning: Undefined variable $res2 in C:\xampp\htdocs\otica\painel\paginas\os\listar.php on line 114</span></span> -->
 					<span><span style="font-size: 13px; color:#424242">(<?php echo $vendas_hoje ?>) Vendas de hoje</span></span>
 				</div>
 			</div>
@@ -568,4 +567,69 @@ if($total > 0){
 
 
 </script>
+
+<style>
+	/* Ajuste geral para os ícones */
+.r3_counter_box i.icon-rounded {
+    border-radius: 50%;
+    padding: 15px;
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    background: linear-gradient(145deg, #4b79a1, #283e51); /* Gradiente elegante */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.r3_counter_box i.icon-rounded:hover {
+    transform: scale(1.1); /* efeito sutil de zoom ao passar o mouse */
+}
+
+/* Estilo para o box */
+.r3_counter_box {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+    min-height: 90px;
+}
+
+.r3_counter_box:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+}
+
+/* Ajuste nos textos */
+.r3_counter_box .stats h5 {
+    font-size: 20px;
+    margin: 0 0 4px 0;
+    color: #222;
+    font-weight: 600;
+}
+
+.r3_counter_box .stats span {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Para links em toda a área clicável */
+a:hover {
+    text-decoration: none;
+}
+
+/* Correção visual em telas pequenas */
+@media (max-width: 768px) {
+    .r3_counter_box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .r3_counter_box i.icon-rounded {
+        margin-bottom: 10px;
+    }
+}
+	
+</style>
 <!-- //for index page weekly sales java script -->

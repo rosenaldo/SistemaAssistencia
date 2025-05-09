@@ -297,275 +297,458 @@ if($total > 0){
  ?>
 <div class="main-page margem_mobile">
 
-	<?php if($ativo_sistema == ''){ ?>
-<div style="background: #ffc341; color:#3e3e3e; padding:10px; font-size:14px; margin-bottom:10px">
-<div><i class="fa fa-info-circle"></i> <b>Aviso: </b> Prezado Cliente, não identificamos o pagamento de sua última mensalidade, entre em contato conosco o mais rápido possivel para regularizar o pagamento, caso contário seu acesso ao sistema será desativado.</div>
-</div>
-<?php } ?>
+    <?php if($ativo_sistema == ''){ ?>
+    <div style="background: #ffc341; color:#3e3e3e; padding:10px; font-size:14px; margin-bottom:10px">
+        <div><i class="fa fa-info-circle"></i> <b>Aviso: </b> Prezado Cliente, não identificamos o pagamento de sua
+            última mensalidade, entre em contato conosco o mais rápido possivel para regularizar o pagamento, caso
+            contário seu acesso ao sistema será desativado.</div>
+    </div>
+    <?php } ?>
 
-	<div class="col_3">
+    <div class="dashboard-widgets">
+        <a href="pagar" class="widget-card red">
+            <i class="fa fa-dollar"></i>
+            <div class="stats">
+                <h5>R$ <?php echo $pagar_hoje_rsF ?></h5>
+                <span>(<?php echo $pagar_hoje ?>) Pagar Hoje</span>
+            </div>
+        </a>
 
-		<a href="pagar">
-		<div class="col-md-3 widget widget1">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-dollar icon-rounded" style="background:#c20c24"></i>
-				<div class="stats">
-					<h5><strong>R$ <?php echo $pagar_hoje_rsF ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">(<?php echo $pagar_hoje ?>) Pagar Hoje</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="receber">
-		<div class="col-md-3 widget widget1">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-money dollar2 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong>R$ <?php echo $receber_hoje_rsF ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">(<?php echo $receber_hoje ?>) Receb Hoje</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="orcamentos">
-		<div class="col-md-3 widget widget1">
-			<div class="r3_counter_box">				
-				<i class="pull-left fa fa-laptop user1 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><?php echo $orc_pendentes ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">Orç Pendentes</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="estoque">
-		<div class="col-md-3 widget widget1">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><?php echo $total_estoque ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">Estoque Baixo</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="clientes">
-		<div class="col-md-3 widget">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-users dollar2 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><?php echo $total_clientes ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">Clientes</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		
-	</div>
+        <a href="receber" class="widget-card green">
+            <i class="fa fa-money"></i>
+            <div class="stats">
+                <h5>R$ <?php echo $receber_hoje_rsF ?></h5>
+                <span>(<?php echo $receber_hoje ?>) Receb Hoje</span>
+            </div>
+        </a>
 
+        <a href="orcamentos" class="widget-card blue">
+            <i class="fa fa-laptop"></i>
+            <div class="stats">
+                <h5><?php echo $orc_pendentes ?></h5>
+                <span>Orç Pendentes</span>
+            </div>
+        </a>
 
+        <a href="estoque" class="widget-card orange">
+            <i class="fa fa-pie-chart"></i>
+            <div class="stats">
+                <h5><?php echo $total_estoque ?></h5>
+                <span>Estoque Baixo</span>
+            </div>
+        </a>
 
-	<div class="col_3" style="margin-top: 15px">
+        <a href="clientes" class="widget-card dark">
+            <i class="fa fa-users"></i>
+            <div class="stats">
+                <h5><?php echo $total_clientes ?></h5>
+                <span>Clientes</span>
+            </div>
+        </a>
 
-		<a href="pagar">
-		<div class="col-md-3 widget widget1 margem_10_web">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-dollar icon-rounded" style="background:#c20c24"></i>
-				<div class="stats">
-					<h5><strong><span style="font-size: 19px; color:#000"><?php echo $pagar_pendentesF ?></span></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">(<?php echo $pagar_pendente ?>) Pgto Venc</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="receber">
-		<div class="col-md-3 widget widget1 margem_10_web">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-money dollar2 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><span style="font-size: 19px; color:#000"><?php echo $receber_pendentesF ?></span></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">(<?php echo $receber_pendente ?>) Receb Venc</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="os">
-		<div class="col-md-3 widget widget1 margem_10_web">
-			<div class="r3_counter_box">				
-				<i class="pull-left fa fa-info user1 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><?php echo $os_atrasadas ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">OS Atrasadas</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="estoque">
-		<div class="col-md-3 widget widget1 margem_10_web">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-info-circle dollar1 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><?php echo $os_entregas_hoje ?></strong></h5>
-					<span><span style="font-size: 13px; color:#424242">Entregas Hoje</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<a href="lista_vendas">
-		<div class="col-md-3 widget margem_10_web">
-			<div class="r3_counter_box">
-				<i class="pull-left fa fa-dollar dollar2 icon-rounded"></i>
-				<div class="stats">
-					<h5><strong><span style="font-size: 19px; color:#000">R$ <?php echo $vendas_hoje_rsF ?></span></strong></h5>
-					<!-- <span><span style="font-size: 13px; color:#424242">(<?php echo $vendas_hoje ?>) Warning: Undefined variable $res2 in C:\xampp\htdocs\otica\painel\paginas\os\listar.php on line 114</span></span> -->
-					<span><span style="font-size: 13px; color:#424242">(<?php echo $vendas_hoje ?>) Vendas de hoje</span></span>
-				</div>
-			</div>
-		</div>
-		</a>
-		<div class="clearfix"> </div>
-	</div>
+        <a href="pagar" class="widget-card red">
+            <i class="fa fa-dollar"></i>
+            <div class="stats">
+                <h5>R$ <?php echo $pagar_pendentesF ?></h5>
+                <span>(<?php echo $pagar_pendente ?>) Pgto Venc</span>
+            </div>
+        </a>
 
-	
-	<div class="row-one widgettable">
-		<div class="col-md-8 content-top-2 card">
-			<div class="agileinfo-cdr altura_grafico">
-				<div class="card-header">
-					<h3>Recebimentos / Despesas</h3>
-				</div>
-				
-				<div id="Linegraph" style="width: 98%; height: 350px">
-				</div>
-				
-			</div>
-		</div>
-		<div class="col-md-4 stat">
-			<div class="content-top-1">
-				<div class="col-md-6 top-content">
-					<h5>Orçamentos do Mês</h5>
-					<label><?php echo $total_orc_mes ?> / <?php echo $total_orc_mes_aprovados ?></label>
-				</div>
-				<div class="col-md-6 top-content1">	   
-					<div id="demo-pie-1" class="pie-title-center" data-percent="<?php echo $porcentagem_orc ?>"> <span class="pie-value"></span> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="content-top-1">
-				<div class="col-md-6 top-content">
-					<h5>OS Concluídas Mês</h5>
-					<label><?php echo $total_os_mes ?> / <?php echo $total_os_mes_aprovados ?></label>
-				</div>
-				<div class="col-md-6 top-content1">	   
-					<div id="demo-pie-2" class="pie-title-center" data-percent="<?php echo $porcentagem_os ?>"> <span class="pie-value"></span> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="content-top-1">
-				<div class="col-md-6 top-content">
-					<h5>Recebimentos do Mês</h5>
-					<label><?php echo $total_receber_mes ?> / <?php echo $total_receber_mes_pagas ?></label>
-				</div>
-				<div class="col-md-6 top-content1">	   
-					<div id="demo-pie-3" class="pie-title-center" data-percent="<?php echo $porcentagem_receber ?>"> <span class="pie-value"></span> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		
+        <a href="receber" class="widget-card green">
+            <i class="fa fa-money"></i>
+            <div class="stats">
+                <h5>R$ <?php echo $receber_pendentesF ?></h5>
+                <span>(<?php echo $receber_pendente ?>) Receb Venc</span>
+            </div>
+        </a>
+
+        <a href="os" class="widget-card blue">
+            <i class="fa fa-info"></i>
+            <div class="stats">
+                <h5><?php echo $os_atrasadas ?></h5>
+                <span>OS Atrasadas</span>
+            </div>
+        </a>
+
+        <a href="estoque" class="widget-card orange">
+            <i class="fa fa-info-circle"></i>
+            <div class="stats">
+                <h5><?php echo $os_entregas_hoje ?></h5>
+                <span>Entregas Hoje</span>
+            </div>
+        </a>
+
+        <a href="lista_vendas" class="widget-card dark">
+            <i class="fa fa-dollar"></i>
+            <div class="stats">
+                <h5>R$ <?php echo $vendas_hoje_rsF ?></h5>
+                <span>(<?php echo $vendas_hoje ?>) Vendas de Hoje</span>
+            </div>
+        </a>
+    </div>
 
 
-		<div class="clearfix"> </div>
-	</div>
-	
-	
-	
 
-	
+
+    <div class="container-fluid my-4">
+        <div class="row g-4">
+
+            <!-- Gráfico de Recebimentos / Despesas -->
+
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Recebimentos / Despesas</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="lineChart" height="150"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Indicadores Laterais -->
+            <div class="col-md-4">
+                <!-- Card 1 -->
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted">Orçamentos do Mês</h6>
+                            <h5><?php echo $total_orc_mes ?> / <?php echo $total_orc_mes_aprovados ?></h5>
+                        </div>
+                        <div id="demo-pie-1" class="pie-title-center" data-percent="<?php echo $porcentagem_orc ?>">
+                            <span class="pie-value"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card shadow-sm mb-3">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted">OS Concluídas Mês</h6>
+                            <h5><?php echo $total_os_mes ?> / <?php echo $total_os_mes_aprovados ?></h5>
+                        </div>
+                        <div id="demo-pie-2" class="pie-title-center" data-percent="<?php echo $porcentagem_os ?>">
+                            <span class="pie-value"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card shadow-sm">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted">Recebimentos do Mês</h6>
+                            <h5><?php echo $total_receber_mes ?> / <?php echo $total_receber_mes_pagas ?></h5>
+                        </div>
+                        <div id="demo-pie-3" class="pie-title-center" data-percent="<?php echo $porcentagem_receber ?>">
+                            <span class="pie-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
 </div>
 
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('lineChart').getContext('2d');
+const lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        datasets: [{
+                label: 'Recebimentos',
+                data: [1200, 1500, 1800, 1700, 1600, 2000],
+                borderColor: 'rgba(40, 167, 69, 0.9)',
+                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                tension: 0.4,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: '#28a745'
+            },
+            {
+                label: 'Despesas',
+                data: [900, 1000, 1400, 1300, 1200, 1500],
+                borderColor: 'rgba(220, 53, 69, 0.9)',
+                backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                tension: 0.4,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: '#dc3545'
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    usePointStyle: true,
+                    padding: 20
+                }
+            },
+            tooltip: {
+                backgroundColor: '#fff',
+                titleColor: '#333',
+                bodyColor: '#333',
+                borderColor: '#ddd',
+                borderWidth: 1
+            }
+        },
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                }
+            },
+            y: {
+                grid: {
+                    color: '#f1f1f1'
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }
+        }
+    }
+});
+</script>
 
 
 
 <!-- for index page weekly sales java script -->
 <script src="js/SimpleChart.js"></script>
 <script>
+var meses = "<?=$datas_apuracao_final?>";
+var dados = meses.split("*");
 
-	var meses = "<?=$datas_apuracao_final?>";
-	var dados = meses.split("*"); 
+var receber = "<?=$total_receber_final?>";
+var dados_receber = receber.split("*");
 
-	var receber = "<?=$total_receber_final?>";
-	var dados_receber = receber.split("*"); 
+var pagar = "<?=$total_pagar_final?>";
+var dados_pagar = pagar.split("*");
 
-	var pagar = "<?=$total_pagar_final?>";
-	var dados_pagar = pagar.split("*"); 
+var maior_valor_linha_pagar = Math.max(...dados_pagar);
+var maior_valor_linha_receber = Math.max(...dados_receber);
+var maior_valor = Math.max(maior_valor_linha_pagar, maior_valor_linha_receber);
+maior_valor = parseFloat(maior_valor) + 100;
 
-		var maior_valor_linha_pagar = Math.max(...dados_pagar);
-    	var maior_valor_linha_receber = Math.max(...dados_receber);
-    	var maior_valor = Math.max(maior_valor_linha_pagar, maior_valor_linha_receber);
-    	maior_valor = parseFloat(maior_valor) + 100;
-    	
-    	var menor_valor_linha_pagar = Math.min(...dados_pagar);
-    	var menor_valor_linha_receber = Math.min(...dados_receber);
-    	var menor_valor = Math.min(menor_valor_linha_pagar, menor_valor_linha_receber);
+var menor_valor_linha_pagar = Math.min(...dados_pagar);
+var menor_valor_linha_receber = Math.min(...dados_receber);
+var menor_valor = Math.min(menor_valor_linha_pagar, menor_valor_linha_receber);
 
-	var graphdata1 = {
-		linecolor: "#c91508",
-		title: "Despesas",
-		values: [
-		{ X: dados[0], Y: dados_pagar[0] },
-		{ X: dados[1], Y: dados_pagar[1] },
-		{ X: dados[2], Y: dados_pagar[2] },
-		{ X: dados[3], Y: dados_pagar[3] },
-		{ X: dados[4], Y: dados_pagar[4] },
-		{ X: dados[5], Y: dados_pagar[5] },
-		
-		]
-	};
-	var graphdata2 = {
-		linecolor: "#00CC66",
-		title: "Recebimentos",
-		values: [
-		{ X: dados[0], Y: dados_receber[0] },
-		{ X: dados[1], Y: dados_receber[1] },
-		{ X: dados[2], Y: dados_receber[2] },
-		{ X: dados[3], Y: dados_receber[3] },
-		{ X: dados[4], Y: dados_receber[4] },
-		{ X: dados[5], Y: dados_receber[5] },
-		]
-	};
+var graphdata1 = {
+    linecolor: "#c91508",
+    title: "Despesas",
+    values: [{
+            X: dados[0],
+            Y: dados_pagar[0]
+        },
+        {
+            X: dados[1],
+            Y: dados_pagar[1]
+        },
+        {
+            X: dados[2],
+            Y: dados_pagar[2]
+        },
+        {
+            X: dados[3],
+            Y: dados_pagar[3]
+        },
+        {
+            X: dados[4],
+            Y: dados_pagar[4]
+        },
+        {
+            X: dados[5],
+            Y: dados_pagar[5]
+        },
 
-	var dataRangeLinha = {
-    		linecolor: "transparent",
-    		title: "",
-    		values: [
-    		{ X: dados[0], Y: menor_valor },
-    		{ X: dados[1], Y: menor_valor },
-    		{ X: dados[2], Y: menor_valor },
-    		{ X: dados[3], Y: menor_valor },
-    		{ X: dados[4], Y: menor_valor },
-    		{ X: dados[5], Y: maior_valor },
-    		
-    		]
-    	};
-	
-		
-		$("#Linegraph").SimpleChart({
-			ChartType: "Line",
-			toolwidth: "50",
-			toolheight: "25",
-			axiscolor: "#E6E6E6",
-			textcolor: "#6E6E6E",
-			showlegends: true,
-			data: [graphdata2, graphdata1, dataRangeLinha],
-			legendsize: "30",
-			legendposition: 'bottom',
-			xaxislabel: 'Meses',
-    		title: 'Últimos 6 Meses',
-    		yaxislabel: 'Total de Contas R$',
-    		responsive: true,
-		});
+    ]
+};
+var graphdata2 = {
+    linecolor: "#00CC66",
+    title: "Recebimentos",
+    values: [{
+            X: dados[0],
+            Y: dados_receber[0]
+        },
+        {
+            X: dados[1],
+            Y: dados_receber[1]
+        },
+        {
+            X: dados[2],
+            Y: dados_receber[2]
+        },
+        {
+            X: dados[3],
+            Y: dados_receber[3]
+        },
+        {
+            X: dados[4],
+            Y: dados_receber[4]
+        },
+        {
+            X: dados[5],
+            Y: dados_receber[5]
+        },
+    ]
+};
+
+var dataRangeLinha = {
+    linecolor: "transparent",
+    title: "",
+    values: [{
+            X: dados[0],
+            Y: menor_valor
+        },
+        {
+            X: dados[1],
+            Y: menor_valor
+        },
+        {
+            X: dados[2],
+            Y: menor_valor
+        },
+        {
+            X: dados[3],
+            Y: menor_valor
+        },
+        {
+            X: dados[4],
+            Y: menor_valor
+        },
+        {
+            X: dados[5],
+            Y: maior_valor
+        },
+
+    ]
+};
 
 
-
+$("#Linegraph").SimpleChart({
+    ChartType: "Line",
+    toolwidth: "50",
+    toolheight: "25",
+    axiscolor: "#E6E6E6",
+    textcolor: "#6E6E6E",
+    showlegends: true,
+    data: [graphdata2, graphdata1, dataRangeLinha],
+    legendsize: "30",
+    legendposition: 'bottom',
+    xaxislabel: 'Meses',
+    title: 'Últimos 6 Meses',
+    yaxislabel: 'Total de Contas R$',
+    responsive: true,
+});
 </script>
+
+<style>
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.widget-card {
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.widget-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.widget-card i {
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 15px;
+}
+
+.stats h5 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stats span {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Cores */
+.red i {
+    background-color: #c20c24;
+}
+
+.green i {
+    background-color: #28a745;
+}
+
+.blue i {
+    background-color: #007bff;
+}
+
+.orange i {
+    background-color: #ff9800;
+}
+
+.dark i {
+    background-color: #343a40;
+}
+
+
+.pie-title-center {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header h5 {
+    margin: 0;
+}
+
+.card-body h5 {
+    margin-top: 0.25rem;
+    color: #212529;
+}
+</style>
 <!-- //for index page weekly sales java script -->
